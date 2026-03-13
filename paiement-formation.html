@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO ===== -->
+<title>Payer ma Formation Digital — MTN Mobile Money | Cabrel Digital Cameroun</title>
+<meta name="description" content="Inscrivez-vous à une formation digitale de Cabrel Digital et payez facilement via MTN Mobile Money. Formations en Marketing Digital, IA, Vidéo, Design et Musique à 5 000 FCFA. Pack Pro à 10 000 FCFA.">
+<meta name="keywords" content="payer formation digital Cameroun, MTN Mobile Money formation, inscription formation IA Cameroun, Cabrel Digital paiement, formation marketing digital paiement">
+<meta name="robots" content="noindex, follow">
+<meta name="author" content="Cabrel Franck — Cabrel Digital">
+<link rel="canonical" href="https://cabreldigital.github.io/paiement-formation.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231E6FD9'/><text y='.9em' font-size='70' x='12'>C</text></svg>">
+
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  // ⚠️ REMPLACE ces 3 valeurs par tes vraies clés EmailJS
+  const EMAILJS_PUBLIC_KEY  = "_XCdboxM45Jcaf4YF";   // Ex: "aBcDeFgHiJkL"
+  const EMAILJS_SERVICE_ID  = "service_y5z1x9b";   // Ex: "service_xxxxxx"
+  const EMAILJS_TEMPLATE_ID = "template_gymfdlp";  // Ex: "template_xxxxxx"
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-deep: #0A1628;
+    --blue-mid: #1A3A6B;
+    --blue-accent: #1E6FD9;
+    --blue-light: #4A9AFF;
+    --blue-glow: #60B0FF;
+    --white: #FFFFFF;
+    --off-white: #F4F7FB;
+    --gray-light: #E8EEF6;
+    --gray-mid: #8FA3BC;
+    --gold: #C9A84C;
+    --mtn-yellow: #FFCC00;
+    --mtn-dark: #1A1A1A;
+    --success: #22C55E;
+    --success-bg: #F0FDF4;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--blue-deep);
+    min-height: 100vh;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 18px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(30, 111, 217, 0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 900;
+    color: var(--white); text-decoration: none;
+  }
+  .nav-logo span { color: var(--blue-light); }
+  .nav-back {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none; font-size: 0.875rem;
+    font-weight: 500; display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--blue-light); }
+
+  /* ===== MAIN LAYOUT ===== */
+  .page-wrap {
+    max-width: 1000px; margin: 0 auto;
+    padding: 110px 24px 60px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 32px; align-items: start;
+  }
+
+  /* ===== LEFT — STEPS ===== */
+  .steps-panel {}
+
+  .page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900;
+    color: var(--blue-deep); margin-bottom: 6px;
+  }
+  .page-title span { color: var(--blue-accent); }
+  .page-sub { font-size: 0.95rem; color: var(--gray-mid); margin-bottom: 36px; }
+
+  /* Steps indicator */
+  .steps-indicator {
+    display: flex; align-items: center; gap: 0;
+    margin-bottom: 36px;
+  }
+  .step-dot {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.825rem; font-weight: 600;
+  }
+  .step-dot .dot {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.825rem;
+    transition: all 0.3s;
+  }
+  .step-dot.active .dot { background: var(--blue-accent); color: var(--white); }
+  .step-dot.done .dot { background: var(--success); color: var(--white); }
+  .step-dot.inactive .dot { background: var(--gray-light); color: var(--gray-mid); }
+  .step-dot.active .label { color: var(--blue-accent); }
+  .step-dot.done .label { color: var(--success); }
+  .step-dot.inactive .label { color: var(--gray-mid); }
+  .step-line {
+    flex: 1; height: 2px; background: var(--gray-light);
+    margin: 0 12px; border-radius: 2px;
+    transition: background 0.3s;
+  }
+  .step-line.done { background: var(--success); }
+
+  /* ===== STEP CARDS ===== */
+  .step-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 16px; padding: 32px;
+    margin-bottom: 20px;
+    display: none;
+    animation: fadeIn 0.35s ease;
+  }
+  .step-card.active { display: block; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+  .step-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--blue-deep); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  /* STEP 1 — Formation choice */
+  .formations-list { display: flex; flex-direction: column; gap: 12px; }
+  .formation-option {
+    border: 2px solid var(--gray-light);
+    border-radius: 12px; padding: 16px 20px;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .formation-option:hover { border-color: var(--blue-accent); background: rgba(30,111,217,0.03); }
+  .formation-option.selected { border-color: var(--blue-accent); background: rgba(30,111,217,0.06); }
+  .formation-option input[type="radio"] { display: none; }
+  .fo-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--off-white); display: flex;
+    align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+    transition: background 0.2s;
+  }
+  .formation-option.selected .fo-icon { background: rgba(30,111,217,0.1); }
+  .fo-info { flex: 1; }
+  .fo-name { font-weight: 600; font-size: 0.95rem; color: var(--blue-deep); }
+  .fo-desc { font-size: 0.8rem; color: var(--gray-mid); margin-top: 2px; }
+  .fo-price {
+    font-weight: 700; font-size: 0.95rem;
+    color: var(--blue-accent); white-space: nowrap;
+  }
+  .fo-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 2px solid var(--gray-light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 0.2s;
+  }
+  .formation-option.selected .fo-check {
+    background: var(--blue-accent); border-color: var(--blue-accent);
+    color: white; font-size: 0.7rem;
+  }
+
+  /* STEP 2 — Info form */
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block; font-size: 0.825rem; font-weight: 600;
+    color: var(--blue-deep); margin-bottom: 7px;
+  }
+  .form-group input, .form-group select {
+    width: 100%; padding: 12px 16px;
+    border: 1.5px solid var(--gray-light);
+    border-radius: 8px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; color: var(--blue-deep);
+    background: var(--white); outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-group input:focus, .form-group select:focus { border-color: var(--blue-accent); }
+  .form-group input.error { border-color: #EF4444; }
+  .error-msg { font-size: 0.78rem; color: #EF4444; margin-top: 4px; display: none; }
+  .error-msg.show { display: block; }
+
+  /* STEP 3 — MTN Payment */
+  .mtn-box {
+    background: var(--mtn-dark);
+    border-radius: 14px; padding: 28px;
+    text-align: center; margin-bottom: 20px;
+    position: relative; overflow: hidden;
+  }
+  .mtn-box::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: var(--mtn-yellow);
+  }
+  .mtn-logo-area {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin-bottom: 20px;
+  }
+  .mtn-badge {
+    background: var(--mtn-yellow);
+    color: var(--mtn-dark); font-weight: 900;
+    font-size: 0.9rem; padding: 6px 14px;
+    border-radius: 6px; letter-spacing: 1px;
+  }
+  .mtn-title { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+  .mtn-number-label { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-bottom: 8px; }
+  .mtn-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 900;
+    color: var(--mtn-yellow); letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .mtn-name { color: rgba(255,255,255,0.7); font-size: 0.875rem; margin-bottom: 20px; }
+  .mtn-amount-row {
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px; padding: 16px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .mtn-amount-label { color: rgba(255,255,255,0.5); font-size: 0.825rem; }
+  .mtn-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 900; color: var(--mtn-yellow);
+  }
+
+  .mtn-steps { margin: 20px 0; }
+  .mtn-step-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 12px 0; border-bottom: 1px solid var(--gray-light);
+  }
+  .mtn-step-item:last-child { border-bottom: none; }
+  .mtn-step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--blue-accent); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+  }
+  .mtn-step-text { font-size: 0.875rem; color: var(--blue-deep); line-height: 1.5; padding-top: 4px; }
+  .mtn-step-text strong { color: var(--blue-accent); }
+
+  .copy-btn {
+    background: rgba(255,204,0,0.12);
+    border: 1px solid rgba(255,204,0,0.3);
+    color: var(--mtn-yellow); font-family: 'DM Sans', sans-serif;
+    font-size: 0.825rem; font-weight: 600; padding: 8px 18px;
+    border-radius: 100px; cursor: pointer; transition: all 0.2s;
+    margin-top: 12px;
+  }
+  .copy-btn:hover { background: rgba(255,204,0,0.2); }
+
+  .proof-upload {
+    border: 2px dashed var(--gray-light);
+    border-radius: 12px; padding: 24px;
+    text-align: center; cursor: pointer;
+    transition: all 0.2s; margin-bottom: 16px;
+  }
+  .proof-upload:hover { border-color: var(--blue-accent); background: rgba(30,111,217,0.02); }
+  .proof-upload .pu-icon { font-size: 2rem; margin-bottom: 8px; }
+  .proof-upload .pu-text { font-size: 0.875rem; color: var(--gray-mid); }
+  .proof-upload .pu-text strong { color: var(--blue-accent); }
+  .proof-upload input { display: none; }
+  .proof-upload.has-file { border-color: var(--success); background: var(--success-bg); }
+  .proof-upload.has-file .pu-text { color: var(--success); }
+
+  /* STEP 4 — Confirmation */
+  .success-card {
+    text-align: center; padding: 20px 0;
+  }
+  .success-icon {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: var(--success-bg); border: 3px solid var(--success);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; margin: 0 auto 24px;
+    animation: popIn 0.5s ease;
+  }
+  @keyframes popIn { 0%{transform:scale(0)} 70%{transform:scale(1.15)} 100%{transform:scale(1)} }
+  .success-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 900;
+    color: var(--blue-deep); margin-bottom: 10px;
+  }
+  .success-sub { font-size: 0.95rem; color: var(--gray-mid); line-height: 1.7; margin-bottom: 28px; }
+  .success-details {
+    background: var(--off-white); border-radius: 12px; padding: 20px;
+    text-align: left; margin-bottom: 24px;
+  }
+  .sd-row {
+    display: flex; justify-content: space-between;
+    padding: 8px 0; border-bottom: 1px solid var(--gray-light);
+    font-size: 0.875rem;
+  }
+  .sd-row:last-child { border-bottom: none; }
+  .sd-label { color: var(--gray-mid); }
+  .sd-value { font-weight: 600; color: var(--blue-deep); }
+
+  /* ===== BUTTONS ===== */
+  .btn-next {
+    width: 100%; background: var(--blue-accent);
+    color: var(--white); border: none; cursor: pointer;
+    padding: 15px; border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    transition: all 0.25s; display: flex;
+    align-items: center; justify-content: center; gap: 8px;
+    margin-top: 8px;
+  }
+  .btn-next:hover { background: var(--blue-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(30,111,217,0.3); }
+  .btn-next:disabled { background: var(--gray-light); color: var(--gray-mid); transform: none; box-shadow: none; cursor: not-allowed; }
+
+  .btn-wa {
+    width: 100%; background: #25D366;
+    color: var(--white); border: none; cursor: pointer;
+    padding: 15px; border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    transition: all 0.25s; text-decoration: none;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    margin-top: 12px;
+  }
+  .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
+
+  .btn-back {
+    background: none; border: 1.5px solid var(--gray-light);
+    color: var(--gray-mid); cursor: pointer;
+    padding: 12px 24px; border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem; font-weight: 500;
+    transition: all 0.2s; margin-right: 12px;
+  }
+  .btn-back:hover { border-color: var(--blue-accent); color: var(--blue-accent); }
+
+  .btn-row { display: flex; align-items: center; margin-top: 8px; }
+  .btn-row .btn-next { flex: 1; margin-top: 0; }
+
+  /* ===== RIGHT — ORDER SUMMARY ===== */
+  .order-summary {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 16px; padding: 28px;
+    position: sticky; top: 100px;
+  }
+  .os-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--blue-deep); margin-bottom: 20px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--gray-light);
+  }
+  .os-formation {
+    display: flex; gap: 12px; align-items: center;
+    margin-bottom: 20px; padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .os-icon {
+    width: 48px; height: 48px; border-radius: 10px;
+    background: rgba(30,111,217,0.08);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0;
+  }
+  .os-formation-name { font-weight: 600; font-size: 0.95rem; color: var(--blue-deep); }
+  .os-formation-sub { font-size: 0.8rem; color: var(--gray-mid); margin-top: 2px; }
+  .os-row {
+    display: flex; justify-content: space-between;
+    padding: 8px 0; font-size: 0.875rem;
+  }
+  .os-row .label { color: var(--gray-mid); }
+  .os-row .value { font-weight: 600; color: var(--blue-deep); }
+  .os-total {
+    display: flex; justify-content: space-between;
+    padding: 16px 0 0; margin-top: 8px;
+    border-top: 2px solid var(--blue-deep);
+  }
+  .os-total .label { font-weight: 700; color: var(--blue-deep); font-size: 0.95rem; }
+  .os-total .value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 900; color: var(--blue-accent);
+  }
+
+  .secure-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(34,197,94,0.08);
+    border: 1px solid rgba(34,197,94,0.2);
+    border-radius: 8px; padding: 10px 14px;
+    margin-top: 20px;
+  }
+  .secure-badge span { font-size: 0.8rem; color: #16A34A; font-weight: 500; }
+
+  .os-contact {
+    margin-top: 16px; padding-top: 16px;
+    border-top: 1px solid var(--gray-light);
+    font-size: 0.8rem; color: var(--gray-mid); line-height: 1.6;
+  }
+  .os-contact a { color: var(--blue-accent); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .page-wrap { grid-template-columns: 1fr; padding: 90px 16px 40px; }
+    .order-summary { order: -1; position: static; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Cabrel<span>Digital</span></a>
+  <a href="index.html" class="nav-back">← Retour au site</a>
+</nav><div class="page-wrap">
+
+  <!-- LEFT — STEPS -->
+  <div class="steps-panel">
+    <h1 class="page-title">Paiement <span>Formation</span></h1>
+    <p class="page-sub">Complétez les étapes ci-dessous pour finaliser votre inscription.</p>
+
+    <!-- Steps indicator -->
+    <div class="steps-indicator">
+      <div class="step-dot active" id="dot-1">
+        <div class="dot">1</div>
+        <div class="label">Formation</div>
+      </div>
+      <div class="step-line" id="line-1"></div>
+      <div class="step-dot inactive" id="dot-2">
+        <div class="dot">2</div>
+        <div class="label">Vos infos</div>
+      </div>
+      <div class="step-line" id="line-2"></div>
+      <div class="step-dot inactive" id="dot-3">
+        <div class="dot">3</div>
+        <div class="label">Paiement</div>
+      </div>
+      <div class="step-line" id="line-3"></div>
+      <div class="step-dot inactive" id="dot-4">
+        <div class="dot">✓</div>
+        <div class="label">Confirmé</div>
+      </div>
+    </div>
+
+    <!-- STEP 1 — Choisir formation -->
+    <div class="step-card active" id="step-1">
+      <div class="step-card-title">🎓 Choisissez votre formation</div>
+      <!-- PACK PRO BANNER -->
+      <div style="background:linear-gradient(135deg,#C9A84C22,#C9A84C0A);border:2px solid #C9A84C;border-radius:14px;padding:20px 22px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;cursor:pointer;" onclick="selectPackPro()">
+        <div>
+          <div style="font-size:0.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#C9A84C;margin-bottom:6px;">⭐ Pack Professionnel — Meilleure offre</div>
+          <div style="font-weight:700;color:#0A1628;font-size:0.95rem;">Toutes les 5 formations en un seul pack</div>
+          <div style="font-size:0.78rem;color:#8FA3BC;margin-top:4px;">Marketing Digital · IA · Vidéo · Design · Musique</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div style="font-size:0.78rem;color:#8FA3BC;text-decoration:line-through;">25 000 FCFA</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:#C9A84C;line-height:1;">10 000 FCFA</div>
+          <div id="pack-check" style="width:22px;height:22px;border-radius:50%;border:2px solid #C9A84C;display:inline-flex;align-items:center;justify-content:center;margin-top:6px;font-size:0.75rem;font-weight:700;"></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;font-size:0.78rem;color:#8FA3BC;margin-bottom:14px;font-weight:500;">— OU choisissez une formation individuelle —</div>
+
+      <div class="formations-list">
+        <label class="formation-option" onclick="selectFormation(this, 'Marketing Digital IA', '📱', 'Créer vos stratégies marketing avec l\'IA', 5000)">
+          <input type="radio" name="formation" value="Marketing Digital IA">
+          <div class="fo-icon">📱</div>
+          <div class="fo-info">
+            <div class="fo-name">Marketing Digital IA</div>
+            <div class="fo-desc">Stratégies, posts & campagnes créés avec l'IA</div>
+          </div>
+          <div class="fo-price">5 000 FCFA</div>
+          <div class="fo-check"></div>
+        </label>
+        <label class="formation-option" onclick="selectFormation(this, 'Intelligence Artificielle', '🤖', 'Maîtriser les outils IA pour votre activité', 5000)">
+          <input type="radio" name="formation" value="Intelligence Artificielle">
+          <div class="fo-icon">🤖</div>
+          <div class="fo-info">
+            <div class="fo-name">Intelligence Artificielle</div>
+            <div class="fo-desc">Outils IA, automatisation, génération de contenu</div>
+          </div>
+          <div class="fo-price">5 000 FCFA</div>
+          <div class="fo-check"></div>
+        </label>
+        <label class="formation-option" onclick="selectFormation(this, 'Création Vidéo IA', '🎬', 'Générer et monter des vidéos avec l\'IA', 5000)">
+          <input type="radio" name="formation" value="Création Vidéo IA">
+          <div class="fo-icon">🎬</div>
+          <div class="fo-info">
+            <div class="fo-name">Création Vidéo IA</div>
+            <div class="fo-desc">Montage et effets visuels 100% avec l'IA</div>
+          </div>
+          <div class="fo-price">5 000 FCFA</div>
+          <div class="fo-check"></div>
+        </label>
+        <label class="formation-option" onclick="selectFormation(this, 'Design Graphique IA', '🎨', 'Créer logos et visuels avec l\'IA', 5000)">
+          <input type="radio" name="formation" value="Design Graphique IA">
+          <div class="fo-icon">🎨</div>
+          <div class="fo-info">
+            <div class="fo-name">Design Graphique IA</div>
+            <div class="fo-desc">Logos, flyers, identité visuelle générés par IA</div>
+          </div>
+          <div class="fo-price">5 000 FCFA</div>
+          <div class="fo-check"></div>
+        </label>
+        <label class="formation-option" onclick="selectFormation(this, 'Musique Personnalisée IA', '🎵', 'Composer votre musique unique avec l\'IA', 5000)">
+          <input type="radio" name="formation" value="Musique Personnalisée IA">
+          <div class="fo-icon">🎵</div>
+          <div class="fo-info">
+            <div class="fo-name">Musique Personnalisée IA</div>
+            <div class="fo-desc">Composez et produisez vos morceaux avec l'IA</div>
+          </div>
+          <div class="fo-price">5 000 FCFA</div>
+          <div class="fo-check"></div>
+        </label>
+      </div>
+      <button class="btn-next" id="btn-step1" onclick="goStep(2)" disabled>
+        Continuer → Mes informations
+      </button>
+    </div>
+
+    <!-- STEP 2 — Infos personnelles -->
+    <div class="step-card" id="step-2">
+      <div class="step-card-title">👤 Vos informations</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Prénom *</label>
+          <input type="text" id="prenom" placeholder="Jean" oninput="validateStep2()">
+          <div class="error-msg" id="err-prenom">Veuillez entrer votre prénom</div>
+        </div>
+        <div class="form-group">
+          <label>Nom *</label>
+          <input type="text" id="nom" placeholder="Dupont" oninput="validateStep2()">
+          <div class="error-msg" id="err-nom">Veuillez entrer votre nom</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Numéro WhatsApp *</label>
+        <input type="tel" id="whatsapp" placeholder="+237 6XX XXX XXX" oninput="validateStep2()">
+        <div class="error-msg" id="err-wa">Entrez un numéro valide</div>
+      </div>
+      <div class="form-group">
+        <label>Email (optionnel)</label>
+        <input type="email" id="email" placeholder="vous@email.com">
+      </div>
+      <div class="btn-row">
+        <button class="btn-back" onclick="goStep(1)">← Retour</button>
+        <button class="btn-next" id="btn-step2" onclick="goStep(3)" disabled>
+          Continuer → Paiement MTN
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3 — Paiement MTN MoMo -->
+    <div class="step-card" id="step-3">
+      <div class="step-card-title">💛 Paiement MTN Mobile Money</div>
+
+      <!-- MTN Box -->
+      <div class="mtn-box">
+        <div class="mtn-logo-area">
+          <div class="mtn-badge">MTN</div>
+          <div class="mtn-title">Mobile Money</div>
+        </div>
+        <div class="mtn-number-label">Numéro de paiement</div>
+        <div class="mtn-number" id="mtn-num-display">+237 674 909 641</div>
+        <div class="mtn-name">Cabrel Franck — Cabrel Digital</div>
+        <div class="mtn-amount-row">
+          <span class="mtn-amount-label">Montant à envoyer</span>
+          <span class="mtn-amount">5 000 FCFA</span>
+        </div>
+        <button class="copy-btn" onclick="copyNumber()">📋 Copier le numéro</button>
+      </div>
+
+      <!-- Instructions -->
+      <div class="mtn-steps">
+        <div class="mtn-step-item">
+          <div class="mtn-step-num">1</div>
+          <div class="mtn-step-text">Composez le <strong>*126#</strong> sur votre téléphone MTN ou ouvrez l'application <strong>MTN MoMo</strong></div>
+        </div>
+        <div class="mtn-step-item">
+          <div class="mtn-step-num">2</div>
+          <div class="mtn-step-text">Sélectionnez <strong>Transfert d'argent</strong> puis entrez le numéro <strong>674909641</strong></div>
+        </div>
+        <div class="mtn-step-item">
+          <div class="mtn-step-num">3</div>
+          <div class="mtn-step-text">Entrez le montant <strong>5 000 FCFA</strong> et confirmez avec votre <strong>code PIN MoMo</strong></div>
+        </div>
+        <div class="mtn-step-item">
+          <div class="mtn-step-num">4</div>
+          <div class="mtn-step-text">Prenez une <strong>capture d'écran</strong> du SMS de confirmation MTN et téléchargez-la ci-dessous</div>
+        </div>
+      </div>
+
+      <!-- Upload preuve -->
+      <div class="proof-upload" id="proof-area" onclick="document.getElementById('proof-file').click()">
+        <div class="pu-icon">📸</div>
+        <div class="pu-text"><strong>Cliquez pour joindre</strong> votre capture du SMS MTN<br><span style="font-size:0.78rem">JPG, PNG • Max 5 MB</span></div>
+        <input type="file" id="proof-file" accept="image/*" onchange="handleFileUpload(this)">
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-back" onclick="goStep(2)">← Retour</button>
+        <button class="btn-next" id="btn-step3" onclick="confirmPayment()">
+          ✅ Confirmer mon paiement
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 4 — Confirmation -->
+    <div class="step-card" id="step-4">
+      <div class="success-card">
+        <div class="success-icon">✅</div>
+        <div class="success-title">Inscription confirmée !</div>
+        <p class="success-sub">Votre demande d'inscription a bien été reçue. Cabrel vous contactera sous <strong>24h maximum</strong> sur WhatsApp pour valider votre paiement et vous donner accès à la formation.</p>
+
+        <div class="success-details" id="recap-details">
+          <div class="sd-row">
+            <span class="sd-label">Formation</span>
+            <span class="sd-value" id="recap-formation">—</span>
+          </div>
+          <div class="sd-row">
+            <span class="sd-label">Nom complet</span>
+            <span class="sd-value" id="recap-nom">—</span>
+          </div>
+          <div class="sd-row">
+            <span class="sd-label">WhatsApp</span>
+            <span class="sd-value" id="recap-wa">—</span>
+          </div>
+          <div class="sd-row">
+            <span class="sd-label">Montant payé</span>
+            <span class="sd-value">5 000 FCFA</span>
+          </div>
+          <div class="sd-row">
+            <span class="sd-label">Statut</span>
+            <span class="sd-value" style="color: #F59E0B;">⏳ En attente de validation</span>
+          </div>
+        </div>
+
+        <a id="wa-confirm-link" href="#" target="_blank" class="btn-wa">
+          💬 Envoyer la preuve sur WhatsApp
+        </a>
+        <a href="index.html" style="display:block; text-align:center; margin-top:14px; font-size:0.875rem; color:var(--gray-mid); text-decoration:none;">
+          ← Retour au site principal
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT — ORDER SUMMARY -->
+  <div class="order-summary">
+    <div class="os-title">📋 Récapitulatif</div>
+    <div class="os-formation">
+      <div class="os-icon" id="os-icon">🎓</div>
+      <div>
+        <div class="os-formation-name" id="os-name">Sélectionnez une formation</div>
+        <div class="os-formation-sub" id="os-sub">Choisissez parmi les 4 formations disponibles</div>
+      </div>
+    </div>
+    <div class="os-row">
+      <span class="label">Prix formation</span>
+      <span class="value">5 000 FCFA</span>
+    </div>
+    <div class="os-row">
+      <span class="label">Frais de transaction</span>
+      <span class="value">0 FCFA</span>
+    </div>
+    <div class="os-total">
+      <span class="label">Total</span>
+      <span class="value">5 000 FCFA</span>
+    </div>
+
+    <div class="secure-badge">
+      <span>🔒</span>
+      <span>Paiement 100% sécurisé via MTN Mobile Money</span>
+    </div>
+
+    <div class="os-contact">
+      Une question ? Contactez Cabrel directement sur
+      <a href="https://wa.me/237674909641" target="_blank">WhatsApp : +237 674 909 641</a>
+      ou par email : <a href="/cdn-cgi/l/email-protection#3a595b58485f565c485b545951080f0e7a5d575b535614595557"><span class="__cf_email__" data-cfemail="e784868595828b81958689848cd5d2d3a7808a868e8bc984888a">[email&#160;protected]</span></a>
+    </div>
+  </div>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  let selectedFormation = null;
+  let selectedIcon = null;
+  let selectedDesc = null;
+  let selectedPrice = 5000;
+  let uploadedFile = null;
+  let isPackPro = false;
+
+  // Auto-select pack pro if URL has ?pack=pro
+  window.onload = () => {
+    if (window.location.search.includes('pack=pro')) selectPackPro();
+  };
+
+  function selectPackPro() {
+    isPackPro = true;
+    selectedFormation = 'Pack Professionnel Complet (5 formations)';
+    selectedIcon = '⭐';
+    selectedDesc = 'Toutes les formations : Marketing · IA · Vidéo · Design · Musique';
+    selectedPrice = 10000;
+    // Deselect individual
+    document.querySelectorAll('.formation-option').forEach(o => {
+      o.classList.remove('selected');
+      o.querySelector('.fo-check').innerHTML = '';
+    });
+    // Update pack check
+    const pc = document.getElementById('pack-check');
+    pc.style.background = '#C9A84C'; pc.style.color = '#0A1628'; pc.innerHTML = '✓';
+    // Update summary
+    document.getElementById('os-icon').textContent = '⭐';
+    document.getElementById('os-name').textContent = 'Pack Professionnel Complet';
+    document.getElementById('os-sub').textContent = 'Marketing · IA · Vidéo · Design · Musique';
+    updatePriceSummary(10000);
+    document.getElementById('btn-step1').disabled = false;
+  }
+
+  function selectFormation(el, name, icon, desc, price) {
+    isPackPro = false;
+    // Reset pack check
+    const pc = document.getElementById('pack-check');
+    pc.style.background = 'transparent'; pc.innerHTML = '';
+    document.querySelectorAll('.formation-option').forEach(o => {
+      o.classList.remove('selected');
+      o.querySelector('.fo-check').innerHTML = '';
+    });
+    el.classList.add('selected');
+    el.querySelector('.fo-check').innerHTML = '✓';
+    selectedFormation = name;
+    selectedIcon = icon;
+    selectedDesc = desc;
+    selectedPrice = price || 5000;
+    document.getElementById('btn-step1').disabled = false;
+    document.getElementById('os-icon').textContent = icon;
+    document.getElementById('os-name').textContent = name;
+    document.getElementById('os-sub').textContent = desc;
+    updatePriceSummary(selectedPrice);
+  }
+
+  function updatePriceSummary(price) {
+    const fmt = price.toLocaleString('fr-FR') + ' FCFA';
+    document.querySelectorAll('.os-row .value')[0].textContent = fmt;
+    document.querySelector('.os-total .value').textContent = fmt;
+    document.querySelector('.mtn-amount').textContent = fmt;
+  }
+
+  function validateStep2() {
+    const p = document.getElementById('prenom').value.trim();
+    const n = document.getElementById('nom').value.trim();
+    const w = document.getElementById('whatsapp').value.trim();
+    document.getElementById('btn-step2').disabled = !(p && n && w.length >= 9);
+  }
+
+  function handleFileUpload(input) {
+    if (input.files && input.files[0]) {
+      uploadedFile = input.files[0];
+      const area = document.getElementById('proof-area');
+      area.classList.add('has-file');
+      area.querySelector('.pu-text').innerHTML = `<strong>✅ ${uploadedFile.name}</strong><br><span style="font-size:0.78rem;color:var(--success)">Fichier prêt à envoyer</span>`;
+    }
+  }
+
+  function copyNumber() {
+    navigator.clipboard.writeText('+237674909641').then(() => {
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = '✅ Numéro copié !';
+      setTimeout(() => btn.textContent = '📋 Copier le numéro', 2000);
+    });
+  }
+
+  function goStep(n) {
+    document.querySelectorAll('.step-card').forEach(c => c.classList.remove('active'));
+    document.getElementById('step-' + n).classList.add('active');
+    updateIndicator(n);
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function updateIndicator(current) {
+    for (let i = 1; i <= 4; i++) {
+      const dot = document.getElementById('dot-' + i);
+      const line = document.getElementById('line-' + i);
+      if (i < current) {
+        dot.className = 'step-dot done';
+        if (line) line.className = 'step-line done';
+      } else if (i === current) {
+        dot.className = 'step-dot active';
+      } else {
+        dot.className = 'step-dot inactive';
+        if (line) line.className = 'step-line';
+      }
+    }
+  }
+
+  function confirmPayment() {
+    const prenom = document.getElementById('prenom').value.trim();
+    const nom = document.getElementById('nom').value.trim();
+    const wa = document.getElementById('whatsapp').value.trim();
+    const priceFmt = (selectedPrice || 5000).toLocaleString('fr-FR') + ' FCFA';
+
+    // Fill recap
+    document.getElementById('recap-formation').textContent = selectedFormation;
+    document.getElementById('recap-nom').textContent = prenom + ' ' + nom;
+    document.getElementById('recap-wa').textContent = wa;
+    const allRows = document.querySelectorAll('#recap-details .sd-row');
+    if(allRows[3]) allRows[3].querySelector('.sd-value').textContent = priceFmt;
+
+    // WhatsApp message pré-rempli
+    const msg = `Bonjour Cabrel 👋\n\nJe viens de payer *${selectedFormation}* (${priceFmt}).\n\n👤 Nom : ${prenom} ${nom}\n📱 WhatsApp : ${wa}\n\nJe vous envoie la capture MTN pour confirmation. Merci !`;
+    document.getElementById('wa-confirm-link').href = `https://wa.me/237674909641?text=${encodeURIComponent(msg)}`;
+
+    // ── ENVOI EMAIL AUTOMATIQUE via EmailJS ──
+    const templateParams = {
+      to_email:   "cabrelfranck254@gmail.com",
+      formation:  selectedFormation,
+      nom_client: prenom + " " + nom,
+      whatsapp:   wa,
+      montant:    priceFmt,
+      date:       new Date().toLocaleString("fr-FR", { timeZone: "Africa/Douala" })
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(() => {
+        console.log("✅ Email envoyé automatiquement à Cabrel !");
+      })
+      .catch((err) => {
+        console.warn("⚠️ Email non envoyé (vérifier les clés EmailJS) :", err);
+      });
+
+    goStep(4);
+  }
+</script>
+
+<!-- WHATSAPP FLOAT -

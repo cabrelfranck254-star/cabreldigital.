@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Pages principales
+Allow: /index.html
+Allow: /formation-digital.html
+
+# Sitemap
+Sitemap: https://cabreldigital.github.io/sitemap.xml
